@@ -1,1 +1,56 @@
-<p>cart works!</p>
+<app-header></app-header>
+<section class="py-5">
+    <div class="container mt-5">
+        <h1>Cart Summary</h1>
+        <div class="row mt-3">
+            <div class="col-lg-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Product</th>
+                            <th>Image</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>...</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Phone</td>
+                            <td><img width="50px" height="50px" src="" alt=""></td>
+                            <td>
+                               <div class="d-flex">
+                                <button class="btn fw-bolder">-</button>
+                                <input style="width: 3rem;" value="10" type="text" class="form-control" readonly>
+                                <button class="btn fw-bolder">+</button>
+                               </div> 
+                            </td>
+                            <td>$400</td>
+                            <td>
+                                <button class="btn"><i class="fa-solid fa-trash text-danger"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="float-end">
+                    <button class="btn btn-danger">EMPTY CART</button>
+                    <button class="btn btn-primary ms-2">SHOP MORE</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="border rounded p-3 shadow">
+                    <h3>Cart Total : <span class="fw-bolder text-danger">
+                        $ 400
+                    </span> </h3>
+                    <hr>
+
+                    <div class="d-grid">
+                        <button class="btn btn-success">CheckOut</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+  allProduct:any = []
+
+  constructor(private api:ApiService){}
+
+  ngOnInit(): void {
+    this.api.getAllproductsAPI().subscribe((result:any)=>{
+      this.allProduct = result
+      console.log(this.allProduct);
+      
+    })
+  }
+
 
 }

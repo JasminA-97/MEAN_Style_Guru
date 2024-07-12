@@ -1,1 +1,45 @@
-<p>register works!</p>
+<div style="height: 100vh;" class="w-100 d-flex flex-column justify-content-center align-items-center">
+    <div class="row border shadow rounded w-75">
+
+        
+        <div class="col-lg-6">
+            <img src="https://www.allen.ac.in/ace2324/assets/images/register.png" alt="" class="img-fluid">
+        </div>
+        <div class="col-lg-6">
+            <div style="height: 100%;" class="w-100 d-flex align-items-center justify-content-center flex-column">
+                <h4>Welcome User!!!</h4>
+                <!--ini 2 way binding cheyyan form nu athinte form grp ethann parayanam. so form nte oru property annu formGroup, ath reactiveModule undenkil matrame wrk aaku. athil form ne bind cheyyuka.
+                (ini, formil ngSubmit enna event bind cheyyuka + type = submit, ippo enter adichalum form submit aakum) ennitt define register() in ts-->
+                <form (ngSubmit)="register()" [formGroup]="registerForm" class="mt-3 container w-100">
+                    <div class="form-floating mb-3">
+                        <!--name attribte is a must for 2 way binding of input tag if it is inside form, pinne formControlName, athil register formile eth key lano input tagil ninnum kittunna value store cheyyendath ath-->
+                        <input name="username" formControlName="username" type="text" class="form-control" id="floatingInputname" placeholder="name@example.com">
+                        <label for="floatingInput">Username</label>
+                    </div>
+
+                    <div *ngIf="registerForm.get('username')?.errors && registerForm.get('username')?.touched" class="fw-bolder text-danger mb-3">*Invalid Username</div>
+
+                    <div class="form-floating mb-3">
+                        <input name="email" formControlName="email"  type="email" class="form-control" id="floatingInput" placeholder="Username">
+                        <label for="floatingInputname">Email address</label>
+                    </div>
+
+                    <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched" class="fw-bolder text-danger mb-3">*Invalid Email</div>
+
+                    <div class="form-floating">
+                        <input name="password" formControlName="password"  type="password" class="form-control" id="floatingPassword" placeholder="password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+
+                    <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched" class="fw-bolder text-danger mb-3">*Invalid Password</div>
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+                <p><b>Already a  User? </b>Click here to <a routerLink="/login">Login</a></p>
+
+            </div>
+        </div>
+    </div>
+</div>
