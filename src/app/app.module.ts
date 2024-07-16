@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { SearchPipe } from './pipes/search.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     CartComponent,
     WishlistComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
