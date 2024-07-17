@@ -17,7 +17,7 @@ export class ApiService {
   cartCount = new BehaviorSubject(0)
   wishlistCount = new BehaviorSubject(0) //then define getWishlistCount() to assign value to BehaviourSubject
 
-  server_url = "http://localhost:3000"
+  server_url = "https://mean-style-guru-server.onrender.com"
 
   constructor(private http:HttpClient) {
     if(sessionStorage.getItem("token")){
